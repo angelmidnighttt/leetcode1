@@ -1,0 +1,15 @@
+{
+  "name": "leetcode-js",
+  "version": "1.0.0",
+  "description": "Bo bai tap LeetCode tu de den kho, giai bang JavaScript / Node.js",
+  "private": true,
+  "scripts": {
+    "test": "node scripts/run-all.js",
+    "test:easy": "node scripts/run-all.js 01-easy",
+    "test:medium": "node scripts/run-all.js 02-medium",
+    "test:hard": "node scripts/run-all.js 03-hard",
+    "practice": "node scripts/practice.js",
+    "list": "node scripts/list.js"
+  },
+  "license": "MIT"
+}

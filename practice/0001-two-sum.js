@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 /**
  * 1. Two Sum - Easy - https://leetcode.com/problems/two-sum/
  *
@@ -11,7 +11,7 @@
  *
  * Độ phức tạp: O(n) thời gian, O(n) bộ nhớ.
  */
-const { test } = require('../lib/test');
+const { test } = require("../lib/test");
 
 // >>> SOLUTION
 // TODO: tu viet loi giai o day.
@@ -19,15 +19,36 @@ const { test } = require('../lib/test');
 
 function twoSum(nums, target) {
   // TODO
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    if (map.has(complement)) {
+      return [map.get(complement), i];
+    }
+    map.set(nums[i], i);
+  }
+  return [];
 }
 
 // <<< SOLUTION
 
-test('1. Two Sum', twoSum, [
-  [[[2, 7, 11, 15], 9], [0, 1]],
-  [[[3, 2, 4], 6], [1, 2]],
-  [[[3, 3], 6], [0, 1]],
-  [[[-1, -2, -3, -4, -5], -8], [2, 4]],
+test("1. Two Sum", twoSum, [
+  [
+    [[2, 7, 11, 15], 9],
+    [0, 1],
+  ],
+  [
+    [[3, 2, 4], 6],
+    [1, 2],
+  ],
+  [
+    [[3, 3], 6],
+    [0, 1],
+  ],
+  [
+    [[-1, -2, -3, -4, -5], -8],
+    [2, 4],
+  ],
 ]);
 
 module.exports = { twoSum };
